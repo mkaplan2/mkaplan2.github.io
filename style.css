@@ -6,3 +6,7 @@ h1 {
 #bold{
     font-weight:bold;
 }
+
+h2 {
+    font-family: 'Harmattan',Arial, Helvetica, sans-serif;
+}
