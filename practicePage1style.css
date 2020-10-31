@@ -138,5 +138,6 @@ html, body{
     position: absolute;
     top: 276px;
     left: 862px;
+    font-family: 'Charm', cursive; /* can use this as a marker to see if page has updated yet*/
 }
 
