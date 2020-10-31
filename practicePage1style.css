@@ -174,5 +174,48 @@ html, body{
     padding: 10px 10px;
 }
 
+.media ul li{
+    font-size: 18px;
+    margin: 24px 0;
+}
 
+
+
+/* animations */
+
+.title span{
+    opacity: 0;
+    animation: appear-text 0.0001s linear forwards;
+    animation-delay: 2s;
+}
+
+.title:after{
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.4s;
+}
+
+.tag-line span{
+    opacity: 0;
+    animation: appear-text 0.0001s linear forwards;
+    animation-delay: 2s;
+}
+
+.tag-line:after{
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.8s; /*so is slightly after the title, because title's animation delay was 1.4 sec*/
+}
 
