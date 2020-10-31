@@ -67,7 +67,7 @@ html, body{
 .logo {
     position: fixed;
     left:180px;
-    font-family: 'Charm', cursive;
+    font-family: 'Charm', cursive; /* welp this has not updated to cursive yet, but give it like until 4:00 pm to see if it updats (30 min from now) */
     font-weight: bolder;
     font-size: 20px;
 }
@@ -83,5 +83,26 @@ html, body{
     left: -20px;
     top: 180px;
     transform: rotate(-90deg);
+}
+
+.tag{
+    position: fixed;
+    top:166px;
+    left: 152px;
+    padding: 10px 30px;
+}
+
+.year{
+    position: fixed;
+    top: 556px;
+    left: 152px;
+    padding: 10px 30px;
+}
+
+.arrow-left{
+    position: fixed;
+    top:686px;
+    left:42px;
+    padding: 10px 30px;
 }
 
