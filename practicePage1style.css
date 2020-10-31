@@ -245,3 +245,38 @@ html, body{
         opacity: 1;
     }
 }
+
+.img{
+    opacity: 0;
+    animation: appear-text 1s linear forwards;
+    animation-delay: 1.4s;
+}
+
+.img:after{ /* makes it so that the image does NOT appear immediately*/
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #b68c70;
+    position: absolute;
+    animation: rev-img 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards; /*says rev-img here*/
+    animation-delay: 1s; 
+}
+
+@keyframes rev-img{
+    0% {
+        left: 0%;
+        width: 0%;
+    }
+
+    50%{
+        left:0;
+        width: 46%;
+    }
+
+    100%{
+        left: 46%;
+        width: 0;
+    }
+}
