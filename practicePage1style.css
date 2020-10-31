@@ -3,7 +3,7 @@ body{ /* html, body { did not seem to do anything, so I am changing to to just "
     padding: 0;
     width: 100%;
     height: 100vh;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif; /* copied an fased the code syntax for how to refer to this family from google fonts, because was not working when only did what tutorial said */
 }
 
 .s-two{
