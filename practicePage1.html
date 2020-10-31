@@ -184,6 +184,14 @@
                 ease: Expo.easeInOut
             });
 
+            TweenMax.staggerFrom(".media ul li", 2, { /* using staggerFrom instead of from now--figure out what this does!*/
+                delay: 2.8,
+                opacity: 0,
+                y: 40,
+                rotation: 90,
+                ease: Expo.easeInOut
+            }, 0.2); /*entering another parameter need for staggerFrom (? i think that is what is happening?) look up to see what this does!*/
+
         </script>
 
     </body>
