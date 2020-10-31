@@ -106,3 +106,30 @@ html, body{
     padding: 10px 30px;
 }
 
+.arrow-right{
+    position: fixed;
+    top:686px;
+    left:132px;
+    padding: 10px 30px;
+}
+
+.add{
+    position: fixed;
+    top: 556px;
+    left: 382px;
+    font-size: 20px;
+    padding: 10px 30px;
+}
+
+.img img{
+    width: 46% /* this is supposed to shrink down the image, but since i have i different image, i might have to adjust hte number i shrink it by */
+}
+
+.img{ /* this section shifted the image from the left to the center*/
+    position: fixed;
+    z-index: 0;
+    top: 24.6%;
+    left: 38;
+}
+
+
