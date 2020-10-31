@@ -141,3 +141,38 @@ html, body{
     font-family: 'Charm', cursive; /* can use this as a marker to see if page has updated yet*/
 }
 
+.line {
+    position: fixed;
+    left: 360px;
+    top: 200px;
+    background: #000; 
+    width: 180px;
+    height: 1px; /* because the height is one, you are literally just making a line*/
+}
+
+.e-shop{
+    padding: 10px 30px;
+    position: fixed;
+    left: 1020px;
+    top: 180px;
+    transform: rotate(90deg);
+}
+
+.tag-line{
+    position: fixed;
+    top: 490px;
+    left: 692px;
+    padding: 10px 30px;
+    color: grey;
+}
+
+.media ul{
+    list-style: none;
+    position: fixed;
+    right: 20px;
+    top: 70%;
+    padding: 10px 10px;
+}
+
+
+
