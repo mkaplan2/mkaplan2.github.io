@@ -28,3 +28,12 @@ body{ /* html, body { did not seem to do anything, so I am changing to to just "
     padding: 0;
     display: flex;
 }
+
+.top-bar ul li { /* if this syntax does not seem to do anything even when the file finally starts updating, try to change it by looking up some other syntax on the web*/
+    list-style: none;
+    line-height: 46px;
+    padding: 16px 32px;
+    margin: 0 16px;
+}
+
+
