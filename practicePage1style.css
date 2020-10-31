@@ -21,3 +21,10 @@ body{ /* html, body { did not seem to do anything, so I am changing to to just "
     background: rgba(0,0,0,0,0.2);
     left: 75%;
 }
+
+.top-bar ul{ /* if this syntax does not seem to do anything even when the file finally starts updating, try to change it by looking up some other syntax on the web*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
