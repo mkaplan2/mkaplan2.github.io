@@ -6,11 +6,18 @@ html, body{
     font-family: Poppins;
 }
 
-.s-one{
+.s-two{
     position: absolute;
     width: 1px;
     height: 100vh;
     background: rgba(0,0,0,0,0.2);
-    left: 25;
+    left: 50%;
 }
 
+.s-three{
+    position: absolute;
+    width: 1px;
+    height: 100vh;
+    background: rgba(0,0,0,0,0.2);
+    left: 75%;
+}
