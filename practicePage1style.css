@@ -246,7 +246,7 @@ html, body{
     }
 }
 
-.img{
+.img{ /* imnot sure, but i think at 10:00 he changed .img to img- need to check if i need to do that to, and if that changes the animation!*/
     opacity: 0;
     animation: appear-text 1s linear forwards;
     animation-delay: 1.4s;
