@@ -207,7 +207,7 @@ html, body{
     animation-delay: 2s;
 }
 
-.tag-line:after{
+.tag-line:after{ /* this is notation from css version 2, css 3 used ::after syntax, so basically two colons*/
     content: "";
     top: 0;
     left: 0;
@@ -217,5 +217,22 @@ html, body{
     position: absolute;
     animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
     animation-delay: 1.8s; /*so is slightly after the title, because title's animation delay was 1.4 sec*/
+}
+
+@keyframes rev-block{
+    0%{
+        left: 0%;
+        width: 0%;
+    }
+
+    50%{
+        left: 0%;
+        width: 100%;
+    }
+
+    100%{
+        left: 100%;
+        width: 0%;
+    }
 }
 
