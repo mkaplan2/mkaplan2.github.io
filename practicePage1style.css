@@ -132,4 +132,11 @@ html, body{
     left: 38%;
 }
 
+.title{
+    position: fixed;
+    font-size: 62px;
+    position: absolute;
+    top: 276px;
+    left: 862px;
+}
 
