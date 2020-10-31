@@ -1,4 +1,4 @@
-html, body{
+body{ /* html, body { did not seem to do anything, so I am changing to to just "body {" */
     margin: 0;
     padding: 0;
     width: 100%;
