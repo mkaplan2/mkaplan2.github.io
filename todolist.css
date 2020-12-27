@@ -47,6 +47,36 @@ body{
     font-size: 1.2rem;
     line-height: 1.7;
     list-style: circle;
+    padding-left: 1.1em;
+}
+
+form{
+    display: flex;
+
+}
+.new{
+    background: transparent;
+    border: 0;
+    color: inherit; /*should inherit the white color*/
+    border-bottom: 1px solid currentColor;
+    font-size: inherit; /* should inherit the font size from above */
+    outline: none; 
+
+
+    transition: border-bottom 150ms ease-in;
+    order: 2;
+}
+
+.new:focus{
+    border-bottom-width: 3px;
+}
+
+.new:focus::placeholder{
+    opacity: 0.2;
+}
+
+.new.lest{
+    font-size: 1.1rem;
 }
 
 .active-list{
