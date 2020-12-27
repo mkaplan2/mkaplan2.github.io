@@ -18,8 +18,61 @@
             <li class="active-list">Youtube</li>
             <li>Work</li>
             <li>Grocery</li>
-        </ul>>
+        </ul>
+
+        <form action="">
+            <input 
+                type="text"
+                class = "new list"
+                placeholder="new list name"
+                aria-label="new list name"
+            />
+            <button class= "btn list" 
+            aria-label="create new list">+</button>
+        </form>
     </div>
 
-    <div class="todo-list"></div>
+    <div class="todo-list">
+       <div class="todo-header">
+           <h2 class="list-title">Youtube</h2>
+           <p class="tast-count">3 tasks remaining</p>
+       </div> 
+       
+       <div class="todo-body">
+           <div class="tasks">
+               <div class="task">
+                   <input type="checkbox"
+                   id="task-1"
+                   />
+                   <label for="task-1">
+                    <span class="custom-checkbox"></span>
+                    record todo list video
+                   </label>
+               </div>
+               <!-- /task-1 -->
+               <div class="task">
+                    <input type="checkbox"
+                    id="task-2"
+                    />
+                    <label for="task-2">
+                     <span class="custom-checkbox"></span>
+                     record todo list video
+                    </label>
+               </div>
+               <!-- /task-2 -->
+               <div class="task">
+                    <input type="checkbox"
+                    id="task-3"
+                    />
+                    <label for="task-3">
+                    <span class="custom-checkbox"></span>
+                    record todo list video
+                    </label>
+                 </div>
+                <!-- /task-3 -->
+           </div>
+           <div class="new-task-creator"></div>
+           <div class="delete-stuff"></div>
+       </div>
+    </div>
 </body>
