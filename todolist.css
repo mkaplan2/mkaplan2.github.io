@@ -17,4 +17,26 @@ body{
     font-family:"Work Sans", sans-serif;
     font-weight:300;
     font-size:1.5rem;
+    background-color:var(--clr-primary);
+    color:var(--clr-light);
+
+    display: grid;
+    grid:
+        "header header header header" auto
+        "...... lists active ......." auto /
+        1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+
+
+}
+
+.title{
+    grid-area: header
+}
+
+.all-tasks{
+    grid-area: lists;
+}
+
+.todo-list{
+    grid-area: active;
 }
