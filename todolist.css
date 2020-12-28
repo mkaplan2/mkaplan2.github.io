@@ -103,8 +103,12 @@ form{
     opacity: 0.2;
 }
 
-.new.lest{
+.new.list{
     font-size: 1.1rem;
+}
+
+.new.task{
+    margin-bottom: 0;
 }
 
 .active-list{
@@ -138,6 +142,10 @@ form{
 
 .todo-body{
     padding: var(--spacer);
+}
+
+.new-task-creator .create{
+    color: var(--clr-primary);
 }
 
 [type="checkbox"]{ /* hides all checkboxes/anything tht has a type of "checkbox' */
@@ -202,7 +210,21 @@ form{
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
+    left: 1.5em;
+    top: calc(50% - 1.5px);
     height: 3px;
     background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 150ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.delete-stuff{
+    display: flex;
+    justify-content: space-evenly;
 }
