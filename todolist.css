@@ -142,6 +142,7 @@ form{
 
 .todo-body{
     padding: var(--spacer);
+    position: relative;
 }
 
 .new-task-creator .create{
@@ -227,4 +228,7 @@ form{
 .delete-stuff{
     display: flex;
     justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
 }
