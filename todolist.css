@@ -154,6 +154,7 @@ form{
 
 .task{
     position: relative;
+    margin-bottom: 1.25em;
 }
 
 .task::after{
@@ -201,6 +202,7 @@ form{
     position: absolute;
     left: 0;
     right: 0;
+    top: 50%;
     height: 3px;
     background: currentColor;
 }
