@@ -1,10 +1,11 @@
-:root{
+:root{ /* selects the root element of hte document, which in this case is <html> */
     --clr-primary: rgb(54,112,199);
     --clr-light:#f4f4f4;
     --clr-dark:#333;
     --clr-warming:rgb(99,36,36);
 }
 
+/* "*" -selects all the elements */
 *,
 *::before,
 *::after{
