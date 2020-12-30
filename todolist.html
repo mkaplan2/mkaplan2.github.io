@@ -20,8 +20,7 @@
         <h1 class="title">Stuff I need to do</h1> 
         <div class="all-tasks">
             <h2 class="task-list-title">My list</h2>
-            <ul class="task-list" data-lists> </ul>
-
+            <ul class="task-list" data-lists> </ul> 
             <form action="" data-new-list-form>
                 <input 
                     type="text"
@@ -30,41 +29,48 @@
                     placeholder="new list name"
                     aria-label="new list name"
                 />
-                <button class= "btn createt" 
+                <button class= "btn create" 
                 aria-label="create new list">+</button>
             </form>
         </div>
 
+        <!-- start if the todo-list class -->
         <div class="todo-list" data-list-display-container>
-        <div class="todo-header">
-            <h2 class="list-title" data-list-title>Youtube</h2>
-            <p class="tast-count" data-list-count>3 tasks remaining</p>
-        </div> 
-        
-        <div class="todo-body">
-            <div class="tasks" data-tasks></div>
+            <div class="todo-header">
+                <h2 class="list-title" data-list-title>Youtube</h2>
+                <p class="tast-count" data-list-count>3 tasks remaining</p>
+            </div> 
+            
+            <!-- start of todo-body class -->
+            <div class="todo-body">
+                
+                <div class="tasks" data-tasks></div>
 
-            <div class="new-task-creator">
-                <form action="" data-new-task-form>
-                    <input 
-                        type="text"
-                        data-new-task-input
-                        class = "new task"
-                        placeholder="new task name"
-                        aria-label="new task name"
-                    />
-                    <button class= "btn create" 
-                    aria-label="create new task">+</button>
-                </form>
-            </div>
+                <div class="new-task-creator">
+                    <form action="" data-new-task-form>
+                        <input 
+                            type="text"
+                            data-new-task-input
+                            class = "new task"
+                            placeholder="new task name"
+                            aria-label="new task name"
+                        />
+                        <button class= "btn create" 
+                        aria-label="create new task">+</button>
+                    </form>
+                </div>
 
-            <div class="delete-stuff">
-                <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
-                <button class="btn delete" data-delete-list-button>Delete list</button>
+                <div class="delete-stuff">
+                    <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+                    <button class="btn delete" data-delete-list-button>Delete list</button>
+                </div>
+
             </div>
+             <!-- end of todo-body class -->
 
         </div>
-        </div>
+        <!-- end of the todo-list class -->
+
         <template id="task-template">
             <div class="task">
                 <input type="checkbox"/>
@@ -73,6 +79,7 @@
                 </label>
             </div>
         </template>
+
     </body>
 </html>
 

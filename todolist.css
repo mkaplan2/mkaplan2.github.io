@@ -1,4 +1,9 @@
-:root{ /* selects the root element of hte document, which in this case is <html> */
+:root{ 
+    /* selects the root element of hte document, which in this case is <html> 
+    Any variables declared in the root block have global scope
+    Property names that are prefixed with --, like --example-name, 
+    represent custom properties that contain a value that 
+    can be used in other declarations using the var() function.*/
     --clr-primary: rgb(54,112,199);
     --clr-light:#f4f4f4;
     --clr-dark:#333;
@@ -18,20 +23,25 @@ body{
     font-family:"Work Sans", sans-serif;
     font-weight:300;
     font-size:1.5rem;
-    background-color:var(--clr-primary);
+    background-color:var(--clr-primary); 
+    /* --clr-primary represents the color 
+    that was assigned to it in the root block above*/
+
     color:var(--clr-light);
 
     display: grid;
+    
+    /* Repeating the name of a grid area causes the content to span those cells. 
+    A period signifies an empty cell. 
+    The syntax itself provides a visualization of the structure of the grid. */
     grid:
         "header header header header" auto
         "...... lists active ......." auto /
         1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
-
-
 }
 
 .title{
-    grid-area: header;
+    grid-area: header; /* actually put the title in the "header" place on the grid */
     text-align: center;
     font-size: calc(7vw + 2rem);
     font-weight: 900;
@@ -41,47 +51,47 @@ body{
 }
 
 .all-tasks{
-    grid-area: lists;
+    grid-area: lists; /* putting the things in the "all-task" class/div into the grid-area we called "lists" */
 }
 
 .task-list{
     font-size: 1.2rem;
     line-height: 1.7;
-    list-style: circle;
+    list-style: circle; /* makes the bullet point of the list into a circle shape */
     padding-left: 1.1em;
 }
 
-.list-name{
+.list-name{ /* i think this is made in the js sheet */
     cursor: pointer;
 }
 
-.list-name:hover{
+.list-name:hover{ /* says wut to do if u hover the mouse over this element */
     opacity: 0.7;
 }
 
-form{
+form{ /* access the form tag */
     display: flex;
 
 }
 
 .btn {
-    cursor: pointer;
-    background: 0;
+    cursor: pointer; /* says that the mouse cursor will be a pointer if go over the button element */
+    background: 0; /* MIGHT NEED TO WATCH VIDEO TO SEE WUT PUTTING ALL THESE THINGS TO ZERO IS DOING! */
     border: 0;
     padding: 0;
     color: inherit;
     font-size: 1rem;
 }
 
-.btn.create{
+.btn.create{ /* access the class "btn create" --so basically a "." corresponds to a space LOLL */
     font-size: 1.5rem;
     font-weight: 900;
     margin-right: 0.25em;
-    transition: opacity 250ms ease-in;
+    transition: opacity 250ms ease-in; /* the transtion occurs when the opactiy changes */
 }
 
 .btn.create:hover{
-    opacity:0.7;
+    opacity:0.7; /* when hover, the opacity will change --> this will then cause the transtion above to occur */
 }
 
 .btn.delete{
@@ -96,7 +106,7 @@ form{
     color: var(--clr-warning);
 }
 
-.new{
+.new{ /* watch video to see exactly wut this is doing! */
     background: transparent;
     border: 0;
     color: inherit; /*should inherit the white color*/
@@ -110,15 +120,16 @@ form{
 }
 
 .new::placeholder{
+    /* we are styling the placeholders in the boxes you type in (the text that is there before you start typing */
     opacity: 0.3;
 }
 
-.new:focus{
+.new:focus{ 
     border-bottom-width: 3px;
 }
 
-.new:focus::placeholder{
-    opacity: 0.15;
+.new:focus::placeholder{ 
+    opacity: 0.15; 
 }
 
 
@@ -135,7 +146,7 @@ form{
 }
 
 .todo-list{
-    --spacer: 2rem;
+    --spacer: 2rem; /* !!!making a variable i think??? look at video! */
 
     grid-area: active;
     background: var(--clr-light);
@@ -143,7 +154,7 @@ form{
 }
 
 .todo-header{
-    padding: var(--spacer);
+    padding: var(--spacer); /* !!!using a variable i think??? look at video! */
     background:#e4e4e4;
     display: flex;
     align-items: center;
@@ -186,7 +197,7 @@ form{
 }
 
 .task::after{
-    content: "";
+    content: ""; /* wut is happening? does this insert nothing after the task class? */
     position: absolute;
     right: 0;
     left: 0;
@@ -210,7 +221,7 @@ form{
 }
 
 .task:hover .custom-checkbox,
-[type="checkbox"]:focus + label .custom-checkbox{
+[type="checkbox"]:focus + label .custom-checkbox{ /* !!!WATCH VID TO SEE WUT IS HAPPENING WITH THE "+" SIGN!! */
     transform: scale(1.2);
     color: var(--clr-primary);
 }
