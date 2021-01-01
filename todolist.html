@@ -11,6 +11,7 @@
         />
         <link rel="stylesheet" href = "todolist.css"/>
         <script defer src="scriptfortodolist.js"></script>
+        <!-- Need to make sure to type the defer keyword so the the javascript will only load AFTER the page is done loading-->
     </head>
 
     <body data-gr-c-loaded="true"> <!--remove stuff inside if doesn't work-->
@@ -20,7 +21,10 @@
         <h1 class="title">Stuff I need to do</h1> 
         <div class="all-tasks">
             <h2 class="task-list-title">My list</h2>
-            <ul class="task-list" data-lists> </ul> 
+            <ul class="task-list" data-lists> 
+                <!-- Contains things like youtube, work, grocery, etc...-->
+            </ul> 
+            <!-- This part works with the javascript to create a new todo list (like "Grocery", "Work", etc..)-->
             <form action="" data-new-list-form>
                 <input 
                     type="text"
@@ -34,10 +38,10 @@
             </form>
         </div>
 
-        <!-- start if the todo-list class -->
+        <!-- start of the todo-list class -->
         <div class="todo-list" data-list-display-container>
             <div class="todo-header">
-                <h2 class="list-title" data-list-title>Youtube</h2>
+                <h2 class="list-title" data-list-title>Youtube</h2> <!--Want to be able to change the list-title using javascipt, so need a data attribute to acceess it called "data-list-title"-->
                 <p class="tast-count" data-list-count>3 tasks remaining</p>
             </div> 
             
