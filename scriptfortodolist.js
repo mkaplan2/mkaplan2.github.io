@@ -166,6 +166,15 @@ function createList(name){
     use the date that it was created, and convert it to a string */
     return { id : Date.now().toString(), name: name, tasks: [] }
     /* returns an object that has an id, name, and empty list of task */
+
+    /* the tasks array is an array of objects that have an id, name, and boolean completed field.
+    So if we manually wrote it would look like:
+    tasks: [{
+        id: 1,
+        name: '30 minutes of writing',
+        completed: false
+    }]
+    */
 }
 
 function createTask(name){
@@ -194,12 +203,16 @@ function render(){
     renderLists()
     
     const selectedList = lists.find(list => list.id === selectedListId)
+    
+    /* Want to first see if we have a selected list */
     if(selectedListId == null){
-        /* if do not have a list selected */
+        /* if do not have a list selected,
+        the do not want to display the big box of tasks */
         listDisplayContainer.style.display = 'none'
     } else {
-        listDisplayContainer.style.display = ''
-        listTitleElement.innerText = selectedList.name
+        /* if the selected list is NOT null */
+        listDisplayContainer.style.display = '' /* setting the display to an empty string, which will make it just display normally */
+        listTitleElement.innerText = selectedList.name //using the variable we initialed right closely above
         renderTaskCount(selectedList)
         clearElement(tasksContainer)
         renderTasks(selectedList)
@@ -227,9 +240,13 @@ function renderTasks(selectedList){
 function renderTaskCount(selectedList){
     /* want to show the num of INCOMPLETE tasks */
     const incompleteTasksCount = selectedList.tasks.filter(task => !task.complete).length
+    
     /* ternary operator - makes if statement shorter like i already know! */
     const taskString = incompleteTaskCount === 1 ? "task" : "tasks"
-    listCountElement.innerText = '${incompleteTaskCount} ${taskString} remaining'
+    
+    /* IMPORTANT I DIDN'T REALISE THIS: Using a backtick here, NOT a single quote!!! */
+    /* String interpollation */
+    listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`
 
 }
 
