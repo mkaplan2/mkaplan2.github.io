@@ -5,6 +5,7 @@ like youtube, grocery, etc.. (so the major big tasks) */
 /* Used to make a new list when someone types something into the form*/
 const newListForm = document.querySelector('[data-new-list-form]')
 
+/* ME: Something is wrong- this is NOT updating when put in a new input!!!!*/
 const newListInput = document.querySelector('[data-new-list-input]') /* used to get the input that was inputted/typed into the form */
 
 const deleteListButton = document.querySelector('[data-delete-list-button]')
@@ -18,7 +19,7 @@ const tasksContainer = document.querySelector('[data-tasks]')
 const taskTemplate = document.getElementById('task-template')
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
-const clearCompleteTaskButton = document.querySelector('[data-clear-complete-tasks-button]')
+const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
 /* When you use local storage, need keys 
 (bc localStorage stores key-value pairs.
@@ -116,10 +117,8 @@ deleteListButton.addEventListener( 'click', e =>{
 newListForm.addEventListener('submit', e => {
     e.preventDefault() /* this prevents the pages from refreshing when press enter/submit */
     
-    /* the ".nodevalue" returns a String that represents the value of the current node.
-    In this case returns what we typed (the text in the input tag that 
-        we put in the form, like "Grocery", "Work", etc.) */
-    const listName = newListInput.nodeValue //so the listName will be like "Work" or "Grocery", unless didn't type in anything
+    /* Problem from before: was using ".nodeValue" instead of "value" */
+    const listName = newListInput.value //so the listName will be like "Work" or "Grocery", unless didn't type in anything
     
     //if didn't type in anything, just return
     if(listName == null || listName == ''){
@@ -143,13 +142,13 @@ newListForm.addEventListener('submit', e => {
 
 newTaskForm.addEventListener('submit', e => {
     e.preventDefault()
-    const taskName = newTaskInput.nodeValue
+    const taskName = newTaskInput.value
     if(taskName == null || taskName == ''){
         return
     }
     const task = createTask(taskName)
     newTaskInput.value = null
-    const selectedList = list.find(list => list.id === selectedListId)
+    const selectedList = lists.find(list => list.id === selectedListId)
     selectedList.tasks.push(task)
     saveAndRender()
 })
@@ -205,10 +204,24 @@ function render(){
     const selectedList = lists.find(list => list.id === selectedListId)
     
     /* Want to first see if we have a selected list */
-    if(selectedListId == null){
+    if(selectedListId == 'null' || selectedListId == null){
+        /* okay so this was causing a 
+        problem before because for some reason is 
+        intialized as 'null', NOT null --- LOL,
+        so was not entering the if statement
+        because had "if (selectedListId == null)"
+        instead of : "if (selectedListId == 'null')" */
+
         /* if do not have a list selected,
         the do not want to display the big box of tasks */
-        listDisplayContainer.style.display = 'none'
+        
+        /* this makes sure that no list appears if there is
+        no list available to display -- so gets rid
+        of the box to the side that displays the task COMPLETELY 
+        (because there is not thing to display DUH) */
+        listDisplayContainer.style.display = 'none' 
+        /* because set it to none, 
+        means that this element will not be displayed */
     } else {
         /* if the selected list is NOT null */
         listDisplayContainer.style.display = '' /* setting the display to an empty string, which will make it just display normally */
@@ -225,11 +238,21 @@ function saveAndRender(){
 }
 
 function renderTasks(selectedList){
-    selectedList.task.forEach( task => {
+    selectedList.tasks.forEach(task => {
+        /* so everything below will 
+        run for every single task we have/ "forEach" task we have -- DUH! */
+        
+        /* Using the template tag stuff from the HTML --28:16 */
         const taskElement = document.importNode(taskTemplate.content, true)
-        const checkBox = taskElement.querySelector('input')
-        checkBox.id = task.id
-        checked.checked = task.complete
+        
+        /* OMGGG i was having a problem before because
+        i wrote "checkBox" instead of "checkbox" */
+        const checkbox = taskElement.querySelector('input') /* !! Figure out how this part of the code works- because there are a number f things with "input" -- how does it know what we are talking about ?? */
+        checkbox.id = task.id /* !!!Watch video: what exactly is happening here?? */
+
+        /* lol before was having a problem because wrote: "checked.checked =" 
+        instead of "checkbox.checked =" --LOL */
+        checkbox.checked = task.complete
         const label = taskElement.querySelector('label')
         label.htmlFor = task.id
         label.append(task.name)
@@ -239,13 +262,15 @@ function renderTasks(selectedList){
 
 function renderTaskCount(selectedList){
     /* want to show the num of INCOMPLETE tasks */
-    const incompleteTasksCount = selectedList.tasks.filter(task => !task.complete).length
+    const incompleteTaskCount = selectedList.tasks.filter(task => !task.complete).length
     
     /* ternary operator - makes if statement shorter like i already know! */
     const taskString = incompleteTaskCount === 1 ? "task" : "tasks"
     
-    /* IMPORTANT I DIDN'T REALISE THIS: Using a backtick here, NOT a single quote!!! */
-    /* String interpollation */
+    /* IMPORTANT I DIDN'T REALISE THIS: 
+    Using a backtick here, NOT a single quote!!! */
+    /* String interpollation - basically using code to write 
+    out a string/text that will be displayed: ex: "0 tasks reminaing"*/
     listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`
 
 }
@@ -286,4 +311,4 @@ function clearElement(element){
     }
 }
 
-render()
+render()  /* could this be the problem? i am only calling the render function?? */
